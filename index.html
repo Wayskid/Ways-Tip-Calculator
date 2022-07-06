@@ -13,13 +13,10 @@
         <div class="calculatorBody">
             <div class="valueSection">
                 <div class="firstPart">
-                    <div class="labelErr">
-                        <span class="NOPLabel">Bill</span>
-                        <span class="errMessage">Can't be zero </span>
-                    </div>
+                    <div class="NOPLabel">Bill</div>
                     <div class="labelInput">
                         <label>$</label>
-                        <input type="number" class="inputBill">
+                        <input type="number" class="inputBill" required>
                     </div>
                 </div>
                 <div class="middlePart">
@@ -42,8 +39,8 @@
                         <span class="errMessage">Can't be zero </span>
                     </div>
                     <div class="labelInput">
-                        <label>$</label>
-                        <input type="number" class="inputNOP">
+                        <label>&#8711</label>
+                        <input type="number" class="inputNOP" required>
                     </div>
                 </div>
             </div>
@@ -63,7 +60,6 @@
                     <div class="TRVal">$0.00</div>
                 </div>
                 <button class="calculateBtn userNone">CALCULATE</button>
-                <!-- <button class="ResetBtn">RESET</button> -->
             </div>
         </div>
     </div>

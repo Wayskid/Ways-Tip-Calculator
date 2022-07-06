@@ -7,9 +7,8 @@ const customInput = document.querySelector(".customInput");
 const calculateBtn = document.querySelector(".calculateBtn");
 const ARVal = document.querySelector(".ARVal");
 const TRVal = document.querySelector(".TRVal");
-// const ResetBtn = document.querySelector(".ResetBtn");
 const percents = document.querySelectorAll(".percentToSelect");
-const errMessages = document.querySelectorAll(".errMessage");
+const errMessage = document.querySelector(".errMessage");
 
 
     
@@ -36,10 +35,11 @@ percents.forEach(function returnForeach (percent){
 calculateBtn.addEventListener("click", calculateit)
 
 function calculateit(){
-    
-    if (customInput.value == "") {
+    const NOPValue = parseFloat(inputNOP.value);
+    if (!NOPValue == 0){
+        errMessage.classList.remove("show");
+        if (customInput.value == "") {
         const billValue = parseFloat(inputBill.value);
-        const NOPValue = parseFloat(inputNOP.value);
         const tipPercent = percentValue;
         
         const tipPerPerson = (billValue * (tipPercent/100))/NOPValue;
@@ -48,18 +48,21 @@ function calculateit(){
         
         ARVal.innerText = `$${tipPerPerson.toFixed(2)}`;
         TRVal.innerText = `$${totalPerPerson.toFixed(2)}`;
+        }
+        else{
+            const billValue = parseFloat(inputBill.value);
+            const tipPercent = customInput.value;
+            
+            const tipPerPerson = (billValue * (tipPercent/100))/NOPValue;
+            
+            const totalPerPerson = (billValue * (1 + (tipPercent/100)))/NOPValue
+            
+            ARVal.innerText = `$${tipPerPerson.toFixed(2)}`;
+            TRVal.innerText = `$${totalPerPerson.toFixed(2)}`;
+        }
     }
     else{
-        const billValue = parseFloat(inputBill.value);
-        const NOPValue = parseFloat(inputNOP.value);
-        const tipPercent = customInput.value;
-        
-        const tipPerPerson = (billValue * (tipPercent/100))/NOPValue;
-        
-        const totalPerPerson = (billValue * (1 + (tipPercent/100)))/NOPValue
-        
-        ARVal.innerText = `$${tipPerPerson.toFixed(2)}`;
-        TRVal.innerText = `$${totalPerPerson.toFixed(2)}`;
+        errMessage.classList.add("show");
     }
     
 
@@ -80,9 +83,6 @@ customInput.addEventListener("click", ()=>{
     customInput.value = "";
 })
 
-// ResetBtn.addEventListener("click", ()=>{
-//     window.location.reload();
-// })
 
 
 
