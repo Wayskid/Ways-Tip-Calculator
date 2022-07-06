@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <div class="containerBody">
+        <h1 class="header">WAYS<br>TIPPER</h1>
+        <div class="calculatorBody">
+            <div class="valueSection">
+                <div class="firstPart">
+                    <div class="labelErr">
+                        <span class="NOPLabel">Bill</span>
+                        <span class="errMessage">Can't be zero </span>
+                    </div>
+                    <div class="labelInput">
+                        <label>$</label>
+                        <input type="number" class="inputBill">
+                    </div>
+                </div>
+                <div class="middlePart">
+                    <div>Select tip %</div>
+                    <div class="sixGrid">
+                        <div class="percentToSelect five">5%</div>
+                        <div class="percentToSelect ten">10%</div>
+                        <div class="percentToSelect fifteen">15%</div>
+                        <div class="percentToSelect twentyFIve">25%</div>
+                        <div class="percentToSelect fifty">50%</div>
+                        <div class="percentToSelect customWrap">
+                            <div class="customPercent">Custom</div>
+                            <input class="customInput" type="number">
+                        </div>
+                    </div>
+                </div>
+                <div class="thirdPart">
+                    <div class="labelErr">
+                        <span class="NOPLabel">Number of People</span>
+                        <span class="errMessage">Can't be zero </span>
+                    </div>
+                    <div class="labelInput">
+                        <label>$</label>
+                        <input type="number" class="inputNOP">
+                    </div>
+                </div>
+            </div>
+            <div class="resultSection">
+                <div class="amountResult">
+                    <div class="ARlabels">
+                        <div class="topLabel">Tip Amount</div>
+                        <div class="bottomLabel">/ person</div>
+                    </div>
+                    <div class="ARVal">$0.00</div>
+                </div>
+                <div class="totalResult">
+                    <div class="TRlabels">
+                        <div class="topLabel">Total</div>
+                        <div class="bottomLabel">/ person</div>
+                    </div>
+                    <div class="TRVal">$0.00</div>
+                </div>
+                <button class="calculateBtn userNone">CALCULATE</button>
+                <!-- <button class="ResetBtn">RESET</button> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
